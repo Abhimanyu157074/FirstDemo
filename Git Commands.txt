@@ -1,0 +1,359 @@
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (master)
+$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   Test1.txt
+
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (master)
+$ git commit -m
+error: switch `m' requires a value
+usage: git commit [<options>] [--] <pathspec>...
+
+    -q, --quiet           suppress summary after successful commit
+    -v, --verbose         show diff in commit message template
+
+Commit message options
+    -F, --file <file>     read message from file
+    --author <author>     override author for commit
+    --date <date>         override date for commit
+    -m, --message <message>
+                          commit message
+    -c, --reedit-message <commit>
+                          reuse and edit message from specified commit
+    -C, --reuse-message <commit>
+                          reuse message from specified commit
+    --fixup <commit>      use autosquash formatted message to fixup specified commit
+    --squash <commit>     use autosquash formatted message to squash specified commit
+    --reset-author        the commit is authored by me now (used with -C/-c/--amend)
+    -s, --signoff         add Signed-off-by:
+    -t, --template <file>
+                          use specified template file
+    -e, --edit            force edit of commit
+    --cleanup <default>   how to strip spaces and #comments from message
+    --status              include status in commit message template
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+
+Commit contents options
+    -a, --all             commit all changed files
+    -i, --include         add specified files to index for commit
+    --interactive         interactively add files
+    -p, --patch           interactively add changes
+    -o, --only            commit only specified files
+    -n, --no-verify       bypass pre-commit and commit-msg hooks
+    --dry-run             show what would be committed
+    --short               show status concisely
+    --branch              show branch information
+    --porcelain           machine-readable output
+    --long                show status in long format (default)
+    -z, --null            terminate entries with NUL
+    --amend               amend previous commit
+    --no-post-rewrite     bypass post-rewrite hook
+    -u, --untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (master)
+$ git log
+fatal: your current branch 'master' does not have any commits yet
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (master)
+$ >Test2.txt
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (master)
+$ git add .
+fatal: Unable to create 'D:/GIT - DevOps/DevOps/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (master)
+$ rm -f .git/index.lock
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (master)
+$ git add .
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (master)
+$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   Test1.txt
+        new file:   Test2.txt
+
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (master)
+$ git commit -m "Test1.txt"
+[master (root-commit) d098fd6] Test1.txt
+ Committer: RAWAT <abhimanyu.rawat@capgemini.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 1 insertion(+)
+ create mode 100644 Test1.txt
+ create mode 100644 Test2.txt
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (master)
+$ git log
+commit d098fd68382557030eaa5cddb4c973ca17961436
+Author: RAWAT <abhimanyu.rawat@capgemini.com>
+Date:   Fri Sep 28 12:40:07 2018 +0530
+
+    Test1.txt
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (master)
+$ git commit -m
+error: switch `m' requires a value
+usage: git commit [<options>] [--] <pathspec>...
+
+    -q, --quiet           suppress summary after successful commit
+    -v, --verbose         show diff in commit message template
+
+Commit message options
+    -F, --file <file>     read message from file
+    --author <author>     override author for commit
+    --date <date>         override date for commit
+    -m, --message <message>
+                          commit message
+    -c, --reedit-message <commit>
+                          reuse and edit message from specified commit
+    -C, --reuse-message <commit>
+                          reuse message from specified commit
+    --fixup <commit>      use autosquash formatted message to fixup specified commit
+    --squash <commit>     use autosquash formatted message to squash specified commit
+    --reset-author        the commit is authored by me now (used with -C/-c/--amend)
+    -s, --signoff         add Signed-off-by:
+    -t, --template <file>
+                          use specified template file
+    -e, --edit            force edit of commit
+    --cleanup <default>   how to strip spaces and #comments from message
+    --status              include status in commit message template
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+
+Commit contents options
+    -a, --all             commit all changed files
+    -i, --include         add specified files to index for commit
+    --interactive         interactively add files
+    -p, --patch           interactively add changes
+    -o, --only            commit only specified files
+    -n, --no-verify       bypass pre-commit and commit-msg hooks
+    --dry-run             show what would be committed
+    --short               show status concisely
+    --branch              show branch information
+    --porcelain           machine-readable output
+    --long                show status in long format (default)
+    -z, --null            terminate entries with NUL
+    --amend               amend previous commit
+    --no-post-rewrite     bypass post-rewrite hook
+    -u, --untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (master)
+$ git log
+commit d098fd68382557030eaa5cddb4c973ca17961436
+Author: RAWAT <abhimanyu.rawat@capgemini.com>
+Date:   Fri Sep 28 12:40:07 2018 +0530
+
+    Test1.txt
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (master)
+$ git commit -m "Test1 Test2"
+On branch master
+nothing to commit, working tree clean
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (master)
+$ git log
+commit d098fd68382557030eaa5cddb4c973ca17961436
+Author: RAWAT <abhimanyu.rawat@capgemini.com>
+Date:   Fri Sep 28 12:40:07 2018 +0530
+
+    Test1.txt
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (master)
+$ >Test3.txt
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (master)
+$ git add .
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (master)
+$ git commit -m "Test3"
+[master 8ce4fbe] Test3
+ Committer: RAWAT <abhimanyu.rawat@capgemini.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 Test3.txt
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (master)
+$ git log
+commit 8ce4fbe77ecc0ea20724f74c9b0e8c60d2c6d7b7
+Author: RAWAT <abhimanyu.rawat@capgemini.com>
+Date:   Fri Sep 28 12:42:29 2018 +0530
+
+    Test3
+
+commit d098fd68382557030eaa5cddb4c973ca17961436
+Author: RAWAT <abhimanyu.rawat@capgemini.com>
+Date:   Fri Sep 28 12:40:07 2018 +0530
+
+    Test1.txt
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (master)
+$ git branch rounak
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (master)
+$ git branch hemant
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (master)
+$ git branch
+  hemant
+* master
+  rounak
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (master)
+$ git checkout rounak
+Switched to branch 'rounak'
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (rounak)
+$ git branch
+  hemant
+  master
+* rounak
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (rounak)
+$ cat Test1.txt
+Hello Test1
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (rounak)
+$ >TestRounak.txt
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (rounak)
+$ echo "Test Rounak"> TestRounak.txt
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (rounak)
+$ cat TestRounak.txt
+Test Rounak
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (rounak)
+$ git checkout master
+Switched to branch 'master'
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (master)
+$ cat TestRounak.txt
+Test Rounak
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (master)
+$ git checkout hemant
+Switched to branch 'hemant'
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (hemant)
+$ cat TestRounak.txt
+Test Rounak
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (hemant)
+$ git checkout rounak
+Switched to branch 'rounak'
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (rounak)
+$ git add .\
+>
+warning: LF will be replaced by CRLF in TestRounak.txt.
+The file will have its original line endings in your working directory.
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (rounak)
+$ git status
+On branch rounak
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   TestRounak.txt
+
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (rounak)
+$ git commit -m "commited To rounak"
+[rounak b419345] commited To rounak
+ Committer: RAWAT <abhimanyu.rawat@capgemini.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+ create mode 100644 TestRounak.txt
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (rounak)
+$ cat TestRounak.txt
+Test Rounak
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (rounak)
+$ git checkout hemant
+Switched to branch 'hemant'
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (hemant)
+$ cat TestRounak.txt
+cat: TestRounak.txt: No such file or directory
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (hemant)
+$ git checkout master
+Switched to branch 'master'
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (master)
+$ cat TestRounak.txt
+cat: TestRounak.txt: No such file or directory
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (master)
+$ git checkout rounak
+Switched to branch 'rounak'
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (rounak)
+$ cat Test1.txt
+Hello Test1
+
+abhirawa@BLRWFD09772 MINGW64 /d/GIT - DevOps/DevOps (rounak)
